@@ -21,13 +21,24 @@ This repository is the implementation of state-machine API
 ### Usage
 
 - /workflows
-![/workflows](images/1.png)
+![/workflows](images/4.png)
+Define a workflow with its possible states and their properties.
+
 
 - /workflows/{id}
-![/workflows/{id}](images/2.png)
+![/workflows/{id}](images/3.png)
+```
+Fetch the states and actions associated with a workflow.
+```
 
 - /workflows/instances
-![/workflows/instances](images/3.png)
-
+![/workflows/instances](images/1.png)
+```
+Create a new instance of a workflow with an initial state.
+```
 - /workflows/action
-![/workflows/action](images/4.png)
+![/workflows/action](images/2.png)
+
+```
+Triggers a transition from a current state to a new state if the action is valid.
+```
