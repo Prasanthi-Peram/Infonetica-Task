@@ -17,3 +17,17 @@ This repository is the implementation of state-machine API
 | POST   | `/workflows/instances`                   | Start a new workflow instance     |
 | POST   | `/workflows/action`                      | Execute an action/transition      |
 | GET    | `/workflows/instances/{id}`              | Retrieve  workflow instance by ID |
+
+### Usage
+
+- /workflows
+![/workflows](images/1.png)
+
+- /workflows/{id}
+![/workflows/{id}](images/2.png)
+
+- /workflows/instances
+![/workflows/instances](images/3.png)
+
+- /workflows/action
+![/workflows/action](images/4.png)

@@ -1,0 +1,42 @@
+{
+  "instance-001": {
+    "Id": "instance-001",
+    "WflowId": "sampleWorkflow",
+    "CurrentStateId": "draft",
+    "History": []
+  },
+  "inst1": {
+    "Id": "inst1",
+    "WflowId": "wf1",
+    "CurrentStateId": "applied",
+    "History": [
+      {},
+      {}
+    ]
+  },
+  "winstance1": {
+    "Id": "winstance1",
+    "WflowId": "sampleWorkflow",
+    "CurrentStateId": "draft",
+    "History": [
+      {}
+    ]
+  },
+  "someId": {
+    "Id": "someId",
+    "WflowId": "sampleWorkflow",
+    "CurrentStateId": "draft",
+    "History": [
+      {}
+    ]
+  },
+  "instance-jobapp-001": {
+    "Id": "instance-jobapp-001",
+    "WflowId": "JobApplication",
+    "CurrentStateId": "reviewed",
+    "History": [
+      {},
+      {}
+    ]
+  }
+}
