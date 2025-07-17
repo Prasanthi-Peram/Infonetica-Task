@@ -6,5 +6,6 @@ namespace StateMachine.Models
         public Workflow Wflow { get; set; }
         public string CurrentStateId { get; set; }
         public List<(string ActionId, DateTime Timestamp)> History { get; set; }
+        public DateTime Timestamp {get; set;}
     }
 }
