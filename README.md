@@ -22,11 +22,14 @@ This repository is the implementation of state-machine API
 
 - /workflows
 ![/workflows](images/4.png)
-Define a workflow with its possible states and their properties.
 
+```
+Define a workflow with its possible states and their properties.
+```
 
 - /workflows/{id}
 ![/workflows/{id}](images/3.png)
+
 ```
 Fetch the states and actions associated with a workflow.
 ```
