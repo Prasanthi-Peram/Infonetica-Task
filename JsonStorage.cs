@@ -18,15 +18,11 @@ public static class JsonStorage
         return JsonSerializer.Deserialize<Dictionary<string, Workflow>>(json, SerializerOptions())
     }
 
+
    public static void SaveWorkflows(Dictionary<string, Workflow> store)
     {
           var json = JsonSerializer.Serialize(store, SerializerOptions(true));
-
-
-
         File.WriteAllText(WorkflowFilePath, json);
-
-
     }
 
     // Workflow Instances
