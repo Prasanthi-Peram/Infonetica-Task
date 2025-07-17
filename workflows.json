@@ -1,0 +1,29 @@
+{
+  "sampleWorkflow": {
+    "Id": "sampleWorkflow",
+    "States": {
+      "draft": {
+        "Id": "draft",
+        "IsInitial": true,
+        "IsFinal": false,
+        "Enabled": true
+      },
+      "published": {
+        "Id": "published",
+        "IsInitial": false,
+        "IsFinal": true,
+        "Enabled": true
+      }
+    },
+    "Actions": {
+      "publish": {
+        "Id": "publish",
+        "FromStates": [
+          "draft"
+        ],
+        "ToState": "published",
+        "Enabled": true
+      }
+    }
+  }
+}
