@@ -10,7 +10,7 @@ var app = builder.Build();
 var workflowStore = JsonStorage.Load();
 
 // Endpoint to add a new workflow definition
-app.MapPost("/workflows", ([FromBody] WorkflowDefinition def) =>
+app.MapPost("/workflows", ([FromBody] Workflow def) =>
 {
     if (workflowStore.ContainsKey(def.Id))
         return Results.BadRequest("Duplicate workflow ID");
