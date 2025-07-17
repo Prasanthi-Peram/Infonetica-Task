@@ -1,7 +1,11 @@
 using System;
-
-public class WorkflowState
+namespace StateMachine.Models
 {
-    public required string id;
-    public bool IsInitial, IsFinal, isEnabled;
+    public class WorkflowState
+    {
+        public string Id { get; set; }
+        public bool IsInitial { get; set; }
+        public bool IsFinal { get; set; }
+        public bool IsEnabled { get; set; }
+    }
 }

@@ -1,23 +1,24 @@
 using System.Text.Json;
+using StateMachine.Models;
 
 public static class JsonStorage
 
 {
-    private const string FilePath = "workflows.json";
+    private static readonly string FilePath = "workflows.json";
 
-    public static Dictionary<string, WorkflowDefinition> Load()
+     public static Dictionary<string, Workflow> Load()
     {
         if (!File.Exists(FilePath))
-            return new Dictionary<string, WorkflowDefinition>();
+            return new Dictionary<string, Workflow>();
         var json = File.ReadAllText(FilePath);
 
-        return JsonSerializer.Deserialize<Dictionary<string, WorkflowDefinition>>(json)
-               ?? new Dictionary<string, WorkflowDefinition>();
+         return JsonSerializer.Deserialize<Dictionary<string, Workflow>>(json)
+               ?? new Dictionary<string, Workflow>();
     }
 
-    public static void Save(Dictionary<string, WorkflowDefinition> data)
+   public static void Save(Dictionary<string, Workflow> store)
     {
-        var json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
+         var json = JsonSerializer.Serialize(store, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(FilePath, json);
     }
 }

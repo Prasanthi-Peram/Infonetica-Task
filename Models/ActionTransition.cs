@@ -1,10 +1,11 @@
 using System;
-using System.Collections.Generic;
-
-public class ActionTransition
+namespace StateMachine.Models
 {
-    public string id { get; set; }
-    public bool isEnabled { get; set; }
-    public List<string> fromStates { get; set; }
-    public string toState { get; set; }
+   public class ActionTransition
+    {
+        public string Id { get; set; }
+        public bool IsEnabled { get; set; }
+        public List<string> FromStates { get; set; }
+        public string ToState { get; set; }
+    }
 }

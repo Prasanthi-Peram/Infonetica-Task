@@ -1,9 +1,11 @@
 using System;
-using System.Collections.Generic;
-
-public class Workflow
+namespace StateMachine.Models
 {
-    public List<WorkflowState> States { get; set; }
-    public List<ActionTransition> Actions { get; set; }
+    public class Workflow
+    {
+        public string Id { get; set; }
+        public Dictionary<string, WorkflowState> States { get; set; }
+        public Dictionary<string, ActionTransition> Actions { get; set; }
+    }
 
 }

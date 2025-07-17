@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
+using StateMachine.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-// Load workflow data
+
+// Load stored workflows from file (returns Dictionary<string, Workflow>)
 var workflowStore = JsonStorage.Load();
 
-// Create a new workflow
+// Endpoint to add a new workflow definition
 app.MapPost("/workflows", ([FromBody] WorkflowDefinition def) =>
 {
     if (workflowStore.ContainsKey(def.Id))
@@ -22,26 +25,3 @@ app.MapPost("/workflows", ([FromBody] WorkflowDefinition def) =>
 });
 
 app.Run();
-
-// Workflow definition
-public record WorkflowDefinition(
-    string Id,
-    Dictionary<string, State> States,
-    Dictionary<string, Action> Actions
-);
-
-// State definition
-public record State(
-    string Id,
-    bool IsInitial,
-    bool IsFinal,
-    bool Enabled
-);
-
-// Action definition
-public record Action(
-    string Id,
-    List<string> FromStates,
-    string ToState,
-    bool Enabled
-);
