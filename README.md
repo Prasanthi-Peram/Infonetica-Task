@@ -1,2 +1,2 @@
 # Infonetica-Task
-This repo consists the implementation of state-machine API
+This repository consists of the implementation of state-machine API
