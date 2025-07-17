@@ -15,22 +15,19 @@ public static class JsonStorage
 
 
         var json = File.ReadAllText(WorkflowFilePath);
-        return JsonSerializer.Deserialize<Dictionary<string, Workflow>>(json, SerializerOptions())
+        return JsonSerializer.Deserialize<Dictionary<string, Workflow>>(json, SerializerOptions());
     }
 
 
+    //Save workflows
    public static void SaveWorkflows(Dictionary<string, Workflow> store)
     {
           var json = JsonSerializer.Serialize(store, SerializerOptions(true));
         File.WriteAllText(WorkflowFilePath, json);
     }
 
-    // Workflow Instances
-
-
+    //Load Workflow Instances
     public static Dictionary<string, WorkflowInstance> LoadWorkflowInstances()
-
-
     {
 
         if (!File.Exists(WorkflowInstancesFilePath))
@@ -42,6 +39,7 @@ public static class JsonStorage
     }
 
 
+    //Save worflow instances to json
     public static void SaveWorkflowInstances(Dictionary<string, WorkflowInstance> instances)
     {
         var json = JsonSerializer.Serialize(instances, SerializerOptions(true));
