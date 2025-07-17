@@ -24,4 +24,15 @@ app.MapPost("/workflows", ([FromBody] Workflow def) =>
     return Results.Created($"/workflows/{def.Id}", def);
 });
 
+
+// Endpoint to retrieve an existing definition
+app.MapGet("/workflows/{id}", (string id) =>
+{
+    if (!workflowStore.TryGetValue(id, out var workflow))
+        return Results.NotFound();
+    return Results.Ok(workflow);
+});
+
+
+
 app.Run();
